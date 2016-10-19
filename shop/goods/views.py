@@ -22,6 +22,7 @@ def detail(request, slug):
                 good=good
             )
     feedback = Feedback()
+
     return render(request, 'detail.html',
                   {
                       'good': good,
