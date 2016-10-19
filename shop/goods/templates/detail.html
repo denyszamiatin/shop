@@ -1,0 +1,20 @@
+{%extends 'index.html'%}
+{%block content%}
+<h2>{{good.name}}</h2>
+<p>{{good.description}}</p>
+<p>{{good.price}}</p>
+<p>RAM: {{good.ram}}</p>
+<p>HDD: {{good.hdd}}</p>
+<p>CPU: {{good.cpu.name}}</p>
+<h2>Отзывы:</h2>
+{%for f in feedbacks%}
+<p>{{f.email}}-{{f.name}}: {{f.text}}</p>
+{%endfor%}
+<form method="post">
+    {%csrf_token%}
+<table>
+{{feedback.as_table}}
+</table>
+    <input type="submit" value="Ok">
+</form>
+{%endblock%}

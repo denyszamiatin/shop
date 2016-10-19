@@ -6,5 +6,15 @@
 </head>
 <body>
     <h1>Shop</h1>
+    {%block content%}
+    <ul>
+    {%for good in goods%}
+        <li><a href="/goods/detail/{{good.slug}}">{{good.name}}</a>
+            <p>{{good.description}}</p>
+            <p>{{good.price}}</p>
+        </li>
+    {%endfor%}
+    </ul>
+    {%endblock%}
 </body>
 </html>
