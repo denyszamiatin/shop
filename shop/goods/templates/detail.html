@@ -8,6 +8,7 @@
 <p>CPU: {{good.cpu.name}}</p>
 <h2>Отзывы:</h2>
 <form action="/cart/add" method="post">
+    {%csrf_token%}
     <input type="text" value="1">
     <input type="submit" value="Купить">
     <input type="hidden" value="{{good.id}}">

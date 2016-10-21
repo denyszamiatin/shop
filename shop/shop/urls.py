@@ -20,5 +20,6 @@ from goods.views import index
 urlpatterns = [
     url(r'^$', index),
     url(r'^goods/', include('goods.urls')),
+    url(r'^cart/', include('cart.urls')),
     url(r'^admin/', admin.site.urls),
 ]
