@@ -7,7 +7,10 @@ from .forms import Feedback
 # Create your views here.
 def index(request):
     goods = Good.objects.all()
-    return render(request, 'index.html', {'goods': goods})
+    return render(request, 'index.html', {
+        'goods': goods,
+        'a':request.GET['a']
+    })
 
 
 def detail(request, slug):

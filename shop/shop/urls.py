@@ -23,3 +23,4 @@ urlpatterns = [
     url(r'^cart/', include('cart.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
