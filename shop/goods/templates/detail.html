@@ -7,6 +7,11 @@
 <p>HDD: {{good.hdd}}</p>
 <p>CPU: {{good.cpu.name}}</p>
 <h2>Отзывы:</h2>
+<form action="/cart/add" method="post">
+    <input type="text" value="1">
+    <input type="submit" value="Купить">
+    <input type="hidden" value="{{good.id}}">
+</form>
 {%for f in feedbacks%}
 <p>{{f.email}}-{{f.name}}: {{f.text}}</p>
 {%endfor%}

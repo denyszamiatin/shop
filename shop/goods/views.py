@@ -30,3 +30,7 @@ def detail(request, slug):
                       'feedbacks': Comment.objects.filter(good=good),
                   }
                   )
+
+
+def templ(request):
+    return render(request, 'templ.html', {'a': {'a': 1, 'b': [1,2,3]}})
