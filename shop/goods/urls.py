@@ -9,3 +9,4 @@ urlpatterns = [
     url(r'^detail/(?P<slug>(\w|-)+)$', detail),
     url(r'^templ$', ListView.as_view(model=Good, paginate_by=1)),
 ]
+
