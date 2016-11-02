@@ -9,13 +9,14 @@ def index(request):
     goods = Good.objects.all()
     return render(request, 'index.html', {
         'goods': goods,
-        'a':request.GET['a']
     })
 
 
 def detail(request, slug):
     good = get_object_or_404(Good, slug=slug)
     if request.method == 'POST':
+        if request.POST.get('feedback'):
+            print('!')
         feedback = Feedback(request.POST)
         if feedback.is_valid():
             Comment.objects.create(

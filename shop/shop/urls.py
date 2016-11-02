@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from goods.views import index
+from accounts.views import register, log_in, log_out
 
 urlpatterns = [
     url(r'^$', index),
+    url(r'^registration$', register),
+    url(r'^login$', log_in),
+    url(r'^logout$', log_out),
     url(r'^goods/', include('goods.urls')),
     url(r'^cart/', include('cart.urls')),
     url(r'^admin/', admin.site.urls),

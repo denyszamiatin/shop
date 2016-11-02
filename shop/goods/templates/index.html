@@ -6,6 +6,18 @@
 </head>
 <body>
     <h1>Shop</h1>
+    {%if not user.is_anonymous%}
+    <p>Logined as {{user}} <a href="/logout">Logout</a></p>
+    {%endif%}
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="/registration">Registration</a>
+    <a href="/login?next={{request.path}}">Login</a>
     {%block content%}
     <ul>
     {%for good in goods%}

@@ -10,8 +10,8 @@
 <form action="/cart/add" method="post">
     {%csrf_token%}
     <input type="text" value="1">
-    <input type="submit" value="Купить">
-    <input type="hidden" value="{{good.id}}">
+    <input type="submit" value="Купить" name="buy">
+    <input type="hidden" value="{{good.id}}" name="good">
 </form>
 {%for f in feedbacks%}
 <p>{{f.email}}-{{f.name}}: {{f.text}}</p>
@@ -21,6 +21,6 @@
 <table>
 {{feedback.as_table}}
 </table>
-    <input type="submit" value="Ok">
+    <input type="submit" value="Ok" >
 </form>
 {%endblock%}
