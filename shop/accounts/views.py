@@ -2,6 +2,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.urls.base import reverse
+
 from .forms import UserForm, Login
 
 
@@ -44,6 +46,7 @@ def log_in(request):
         'login_form': login_form
     })
 
+
 def log_out(request):
     logout(request)
-    return redirect('/')
+    return redirect(reverse('root'))

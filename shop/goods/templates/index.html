@@ -16,7 +16,7 @@
         {% endfor %}
         </ul>
     {% endif %}
-    <a href="/registration">Registration</a>
+    <a href="{% url 'register' %}">Registration</a>
     <a href="/login?next={{request.path}}">Login</a>
     {%block content%}
     <ul>

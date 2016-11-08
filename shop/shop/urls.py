@@ -19,8 +19,8 @@ from goods.views import index
 from accounts.views import register, log_in, log_out
 
 urlpatterns = [
-    url(r'^$', index),
-    url(r'^registration$', register),
+    url(r'^$', index, name='root'),
+    url(r'^registration$', register, name='register'),
     url(r'^login$', log_in),
     url(r'^logout$', log_out),
     url(r'^goods/', include('goods.urls')),
