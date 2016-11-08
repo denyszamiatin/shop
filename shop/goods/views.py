@@ -38,3 +38,7 @@ def detail(request, slug):
 
 def templ(request):
     return render(request, 'templ.html', {'a': {'a': 1, 'b': [1,2,3]}})
+
+
+def context_processor(request):
+    return {'abc': 123}
