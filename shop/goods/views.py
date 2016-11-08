@@ -41,4 +41,4 @@ def templ(request):
 
 
 def context_processor(request):
-    return {'abc': 123}
+    return {'abc': 123,}

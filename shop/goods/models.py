@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class ActiveCpu(models.Manager):
     def get_queryset(self):
@@ -58,3 +59,8 @@ class Comment(models.Model):
     name = models.CharField(max_length=200)
     text = models.TextField()
     good = models.ForeignKey(Good)
+
+
+@receiver(post_save, sender=Good)
+def callback(sender, **kwargs):
+    Tag.objects.get(pk=2).good.add(kwargs['instance'])
