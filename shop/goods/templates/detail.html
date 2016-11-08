@@ -1,8 +1,10 @@
 {%extends 'index.html'%}
+{% load convert %}
 {%block content%}
+{% hello %}
 <h2>{{good.name}}</h2>
 <p>{{good.description}}</p>
-<p>{{good.price}}</p>
+<p>Цена: {{good.price|dollar}}</p>
 <p>RAM: {{good.ram}}</p>
 <p>HDD: {{good.hdd}}</p>
 <p>CPU: {{good.cpu.name}}</p>

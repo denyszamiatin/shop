@@ -7,7 +7,7 @@
 <body>
     <h1>Shop</h1>
     {%if not user.is_anonymous%}
-    <p>Logined as {{user}} <a href="/logout">Logout</a></p>
+    <p>Logined as {{user|capfirst}} <a href="/logout">Logout</a></p>
     {%endif%}
     {% if messages %}
         <ul class="messages">
