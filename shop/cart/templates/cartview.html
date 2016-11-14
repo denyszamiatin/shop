@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for form in forms%}
+    <form method="post" action="/cart/change">
+        {% csrf_token %}
+        {{form.1}}
+        {{form.2.as_p}}
+        <input type="hidden" name="gid" value="{{form.0}}">
+        <input type="submit">
+    </form>
+    {% endfor %}
+</body>
+</html>

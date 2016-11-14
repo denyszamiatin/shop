@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 from goods.models import Good
 
@@ -12,3 +13,9 @@ class CartItem(models.Model):
     price = models.FloatField()
     qty = models.PositiveIntegerField()
     cart = models.ForeignKey(Cart)
+
+
+class CartItemForm(forms.ModelForm):
+    class Meta:
+        model = CartItem
+        fields = ('qty',)
